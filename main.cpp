@@ -1,20 +1,10 @@
+#include "input.h"
 #include "histogram.h"
 #include "svg.h"
 #include <iostream>
 #include<vector>
 
 using namespace std;
-
-
-vector<double>
-input_numbers(size_t count) {
-    vector<double> result(count);
-    for (size_t i = 0; i < count; i++) {
-        cin >> result[i];
-    }
-    return result;
-}
-
 
 
 vector<size_t>
@@ -54,7 +44,7 @@ int main()
     cin>>number_count;
 
     cerr<<"Enter numbers:";
-    const auto numbers = input_numbers(number_count);
+    const auto numbers = input_numbers(number_count,cin);
 
     size_t bin_count;
 

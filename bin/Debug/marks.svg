@@ -1,3 +1,3 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg width='400' height='250' viewBox='0 0 400 250' xmlns='http://www.w3.org/2000/svg'>
-<text x='20' y='100'>2</text><rect x='10' y='50' width='30' height='20' stroke='darkmagenta' fill='lightcyan' /><text x='50' y='100'>5</text><rect x='40' y='20' width='30' height='50' stroke='darkmagenta' fill='lightcyan' /><text x='80' y='100'>3</text><rect x='70' y='40' width='30' height='30' stroke='darkmagenta' fill='lightcyan' /></svg>
+<svg width='400' height='960' viewBox='0 0 400 960' xmlns='http://www.w3.org/2000/svg'>
+<text x='20' y='810'>9</text><rect x='10' y='711.6' width='30' height='68.4' stroke='darkmagenta' fill='lightcyan' /><text x='50' y='810'>33</text><rect x='40' y='529.2' width='30' height='250.8' stroke='darkmagenta' fill='lightcyan' /><text x='80' y='810'>100</text><rect x='70' y='20' width='30' height='760' stroke='darkmagenta' fill='lightcyan' /></svg>

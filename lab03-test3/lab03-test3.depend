@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1650290539 source:c:\users\pc\desktop\прога\lab03\input.cpp
+	<iostream>
+	<vector>
+	"input.h"
+
+1650290539 c:\users\pc\desktop\прога\lab03\input.h
+	<iostream>
+	<vector>
+
