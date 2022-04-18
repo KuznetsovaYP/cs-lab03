@@ -29,7 +29,11 @@ void svg_rect(double x, double y, double width, double height,string stroke, str
 }
 
 void
-show_histogram_svg(const vector<size_t>& bins, size_t& bin_height) {
+show_histogram_svg(const vector<size_t>& bins, size_t& height) {
+    if(bins.size()==0)
+    {
+        return;
+    }
     const auto IMAGE_WIDTH = 400;
     const auto TEXT_LEFT = 20;
     const auto TEXT_BASELINE = 20;
@@ -52,7 +56,7 @@ show_histogram_svg(const vector<size_t>& bins, size_t& bin_height) {
         svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
         for (size_t bin : bins)
         {
-            const double height=(double)bin*scaling_factor;
+            height=(double)bin*scaling_factor;
             const double bin_width=BLOCK_WIDTH*height;
             svg_text(top+TEXT_LEFT, TEXT_BASELINE+(IMAGE_HEIGHT-200)+30, to_string(bin));
             svg_rect(top+10,TEXT_WIDTH+(IMAGE_HEIGHT-200)-bin_width,BIN_HEIGHT, bin_width);
@@ -65,7 +69,8 @@ show_histogram_svg(const vector<size_t>& bins, size_t& bin_height) {
         svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
         for (size_t bin : bins)
         {
-            const double bin_width=static_cast<double>(BLOCK_WIDTH*bin);
+            height=bin;
+            const double bin_width=static_cast<double>(BLOCK_WIDTH*height);
             svg_text(top+TEXT_LEFT, TEXT_BASELINE+(IMAGE_HEIGHT-200)+30, to_string(bin));
             svg_rect(top+10,TEXT_WIDTH+(IMAGE_HEIGHT-200)-bin_width,BIN_HEIGHT, bin_width);
             top += BIN_HEIGHT;
