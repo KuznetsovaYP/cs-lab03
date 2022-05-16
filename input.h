@@ -7,7 +7,7 @@
 using namespace std;
 
 vector<double>
-input_numbers(size_t count, istream& stream);
+input_numbers(size_t count, istream& in);
 
 
 #endif // INPUT_H_INCLUDED
