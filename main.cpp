@@ -6,6 +6,28 @@
 
 using namespace std;
 
+struct Input {
+    vector<double> numbers;
+    size_t bin_count;
+    size_t number_count;
+};
+
+
+Input
+read_input(istream& in) {
+    Input data;
+
+    cerr<<"Enter number count: ";
+    in>>data.number_count;
+
+    cerr<<"Enter numbers: ";
+    data.numbers=input_numbers(data.number_count,in);
+
+        cerr<<"Enter bin count: ";
+        in>>data.bin_count;
+
+    return data;
+}
 
 vector<size_t>
 make_histogram(const vector<double> &numbers,size_t &bin_count, size_t number_count,double bin_size, double& min) {
@@ -38,27 +60,19 @@ make_histogram(const vector<double> &numbers,size_t &bin_count, size_t number_co
 int main()
 {
 //Ввод данных
+        Input data;
 
-    size_t number_count;
-    cerr<<"Enter number count:";
-    cin>>number_count;
 
-    cerr<<"Enter numbers:";
-    const auto numbers = input_numbers(number_count,cin);
-
-    size_t bin_count;
-
-        cerr<<"Enter bin count:";
-        cin>>bin_count;
+        read_input(cin);
 //Расчет гистограммы
 
-        double min=numbers[0];
-        double max=numbers[0];
+        double min;
+        double max;
 
-        find_minmax(numbers,min,max);
+        find_minmax(data.numbers,min,max);
 
-        double bin_size = (max-min) / bin_count;
-        const auto bins = make_histogram(numbers, bin_count,number_count,bin_size,min );
+        double bin_size = (max-min) / data.bin_count;
+        const auto bins = make_histogram(data.numbers, data.bin_count,data.number_count,bin_size,min );
 
 
 //Вывод данных

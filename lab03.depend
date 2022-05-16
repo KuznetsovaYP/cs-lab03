@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1650289998 source:c:\users\pc\desktop\прога\lab03\main.cpp
+1652713440 source:c:\users\pc\desktop\прога\lab03\main.cpp
 	"input.h"
 	"histogram.h"
 	"svg.h"
@@ -16,11 +16,16 @@
 	<vector>
 	<iostream>
 
-1652706382 c:\users\pc\desktop\прога\lab03\input.h
+1652712951 c:\users\pc\desktop\прога\lab03\input.h
 	<iostream>
 	<vector>
 
 1650284405 source:c:\users\pc\desktop\прога\lab03\svg.cpp
 	"svg.h"
 	<iostream>
+
+1652712951 source:c:\users\pc\desktop\прога\lab03\input.cpp
+	<iostream>
+	<vector>
+	"input.h"
 
