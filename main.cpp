@@ -8,10 +8,12 @@ using namespace std;
 
 
 Input
-read_input(istream& in) {
+read_input(istream& in, bool prompt) {
     Input data;
-
     size_t number_count;
+    if (prompt)
+    {
+
     cerr<<"Enter number count: ";
     in>>number_count;
 
@@ -20,6 +22,13 @@ read_input(istream& in) {
 
         cerr<<"Enter bin count: ";
         in>>data.bin_count;
+    }
+    else
+    {
+        in>>number_count;
+        data.numbers=input_numbers(number_count,in);
+        in>>data.bin_count;
+    }
 
     return data;
 }
@@ -33,7 +42,7 @@ int main()
 //Ввод данных
 Input data;
 
-        const auto input=read_input(cin);
+        const auto input=read_input(cin,true);
 //Расчет гистограммы
 
 
