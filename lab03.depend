@@ -1,22 +1,22 @@
 # depslib dependency file v1.0
-1652713440 source:c:\users\pc\desktop\прога\lab03\main.cpp
+1652720628 source:c:\users\pc\desktop\прога\lab03\main.cpp
 	"input.h"
 	"histogram.h"
 	"svg.h"
 	<iostream>
 	<vector>
 
-1650218956 c:\users\pc\desktop\прога\lab03\histogram.h
+1652720205 c:\users\pc\desktop\прога\lab03\histogram.h
 	<vector>
 
-1650221842 source:c:\users\pc\desktop\прога\lab03\histogram.cpp
+1652720120 source:c:\users\pc\desktop\прога\lab03\histogram.cpp
 	"histogram.h"
 
 1650225081 c:\users\pc\desktop\прога\lab03\svg.h
 	<vector>
 	<iostream>
 
-1652712951 c:\users\pc\desktop\прога\lab03\input.h
+1652714543 c:\users\pc\desktop\прога\lab03\input.h
 	<iostream>
 	<vector>
 
