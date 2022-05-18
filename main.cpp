@@ -3,6 +3,7 @@
 #include "svg.h"
 #include <iostream>
 #include<vector>
+#include <curl/curl.h>
 
 using namespace std;
 
@@ -39,6 +40,7 @@ read_input(istream& in, bool prompt) {
 
 int main()
 {
+    curl_global_init(CURL_GLOBAL_ALL);
 //¬вод данных
 Input data;
 
