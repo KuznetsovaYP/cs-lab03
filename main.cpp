@@ -38,8 +38,13 @@ read_input(istream& in, bool prompt) {
 
 
 
-int main()
+int main(int argc, char* argv[])
 {
+    if (argc>1)
+    {
+        cout<<"argv[0]= "<<argv[0];
+        return 0;
+    }
     curl_global_init(CURL_GLOBAL_ALL);
 //¬вод данных
 Input data;
