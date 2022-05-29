@@ -13,7 +13,7 @@
 1652888723 source:c:\users\pc\desktop\прога\lab03\histogram.cpp
 	"histogram.h"
 
-1650225081 c:\users\pc\desktop\прога\lab03\svg.h
+1653819929 c:\users\pc\desktop\прога\lab03\svg.h
 	<vector>
 	<iostream>
 
@@ -21,7 +21,7 @@
 	<iostream>
 	<vector>
 
-1650284405 source:c:\users\pc\desktop\прога\lab03\svg.cpp
+1653819929 source:c:\users\pc\desktop\прога\lab03\svg.cpp
 	"svg.h"
 	<iostream>
 
