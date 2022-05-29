@@ -3,6 +3,7 @@
 #include "svg.h"
 #include <iostream>
 #include<vector>
+#include <windows.h>
 
 using namespace std;
 
@@ -37,6 +38,20 @@ make_histogram(const vector<double> &numbers,size_t &bin_count, size_t number_co
 
 int main()
 {
+    DWORD WINAPI GetVersion(void);
+    DWORD info= GetVersion();
+    DWORD mask = 0x0000ffff;
+    DWORD platform = info >> 16;
+    DWORD build;
+    DWORD version = info & mask;
+    DWORD version_major = version & 0xff;
+    DWORD version_minor = version >> 8;
+    if ((info & 0b10000000'00000000'0000000'00000000) == 0)
+    {
+    build = platform;
+    }
+    printf("Windows v%lu.%lu (build %lu)\n",version_major,version_minor,build);
+    return 0;
 //¬вод данных
 
     size_t number_count;
