@@ -5,13 +5,26 @@
 	<iostream>
 	<vector>
 
-1650218956 c:\users\pc\desktop\прога\lab03\histogram.h
+1653824093 c:\users\pc\desktop\прога\lab03\histogram.h
 	<vector>
 
-1650221842 source:c:\users\pc\desktop\прога\lab03\histogram.cpp
+1653824093 source:c:\users\pc\desktop\прога\lab03\histogram.cpp
 	"histogram.h"
 
-1650225081 c:\users\pc\desktop\прога\lab03\svg.h
+1653824093 c:\users\pc\desktop\прога\lab03\svg.h
 	<vector>
+	<iostream>
+
+1653824093 source:c:\users\pc\desktop\прога\lab03\input.cpp
+	<iostream>
+	<vector>
+	"input.h"
+
+1653824093 c:\users\pc\desktop\прога\lab03\input.h
+	<iostream>
+	<vector>
+
+1653824093 source:c:\users\pc\desktop\прога\lab03\svg.cpp
+	"svg.h"
 	<iostream>
 

@@ -37,6 +37,13 @@ make_histogram(const vector<double> &numbers,size_t &bin_count, size_t number_co
 
 int main()
 {
+
+    const char* name = "Commander Shepard";
+    int year = 2154;
+    printf("%s was born in %d.\n", name, year);
+    printf("n = %08x\n", 0x1234567);
+    return 0;
+
 //¬вод данных
 
     size_t number_count;
