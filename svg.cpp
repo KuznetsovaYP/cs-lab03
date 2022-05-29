@@ -1,8 +1,10 @@
 #include "svg.h"
 #include <iostream>
 
+
 const size_t SCREEN_WIDTE=80;
 const size_t MAX_ASTERISK=SCREEN_WIDTE-3-1;
+
 
 void
 svg_begin(double width, double height) {
@@ -29,8 +31,9 @@ void svg_rect(double x, double y, double width, double height,string stroke, str
 }
 
 void
-show_histogram_svg(const vector<size_t>& bins, string stroke) {
+show_histogram_svg(const vector<size_t>& bins, string stroke, string buffer) {
     size_t height;
+
     if(bins.size()==0)
     {
         return;
@@ -63,6 +66,7 @@ show_histogram_svg(const vector<size_t>& bins, string stroke) {
             svg_rect(top+10,TEXT_WIDTH+(IMAGE_HEIGHT-200)-bin_width,BIN_HEIGHT, bin_width, stroke);
             top += BIN_HEIGHT;
         }
+        svg_text(TEXT_LEFT,IMAGE_HEIGHT-50,buffer);
     }
     else
     {
@@ -76,6 +80,7 @@ show_histogram_svg(const vector<size_t>& bins, string stroke) {
             svg_rect(top+10,TEXT_WIDTH+(IMAGE_HEIGHT-200)-bin_width,BIN_HEIGHT, bin_width, stroke);
             top += BIN_HEIGHT;
         }
+        svg_text(TEXT_LEFT,IMAGE_HEIGHT-50,buffer);
     }
     svg_end();
 }

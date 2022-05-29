@@ -6,7 +6,7 @@
 #include <curl/curl.h>
 #include <sstream>
 #include <string>
-
+#include <windows.h>
 
 using namespace std;
 
@@ -69,11 +69,37 @@ download(const string& address) {
     return read_input(buffer, false);
 }
 
+string make_info_text()
+{
+    stringstream buffer;
+   DWORD WINAPI GetVersion(void);
+    DWORD info= GetVersion();
+    DWORD mask = 0x0000ffff;
+    DWORD platform = info >> 16;
+    DWORD build;
+    DWORD version = info & mask;
+    DWORD version_major = version & 0xff;
+    DWORD version_minor = version >> 8;
+    if ((info & 0b10000000'00000000'0000000'00000000) == 0)
+    {
+    build = platform;
+    }
+    else
+    printf("minor_bit = %u",1);
+    char computer_name [MAX_COMPUTERNAME_LENGTH + 1];
+    DWORD Size = sizeof(computer_name);
+    GetComputerNameA(computer_name, &Size);
+
+    buffer << "Windows v" << version_major << "." << version_minor << " (build " << build << ")" << " " << "Computer name: " << computer_name;
+    return buffer.str();
+}
 
 
 int main(int argc, char* argv[])
 {
     Input input;
+
+//¬вод данных
 
     if (argc>1)
     {
@@ -95,12 +121,12 @@ int main(int argc, char* argv[])
     {
         if (argv[i]=="-stroke")
         {
-                show_histogram_svg(bins,argv[i+1]);
+                show_histogram_svg(bins,argv[i+1],make_info_text());
                 c++;
         }
     }
     if (c==0)
-        show_histogram_svg(bins,"darkmagenta");
+        show_histogram_svg(bins,"darkmagenta",make_info_text);
 
 
     return 0;
