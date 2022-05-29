@@ -1,11 +1,10 @@
 # depslib dependency file v1.0
-1653826739 source:c:\users\pc\desktop\прога\lab03\main.cpp
+1653831923 source:c:\users\pc\desktop\прога\lab03\main.cpp
 	"input.h"
 	"histogram.h"
 	"svg.h"
 	<iostream>
 	<vector>
-	<windows.h>
 
 1653824093 c:\users\pc\desktop\прога\lab03\histogram.h
 	<vector>
@@ -13,7 +12,7 @@
 1653824093 source:c:\users\pc\desktop\прога\lab03\histogram.cpp
 	"histogram.h"
 
-1653824093 c:\users\pc\desktop\прога\lab03\svg.h
+1653832358 c:\users\pc\desktop\прога\lab03\svg.h
 	<vector>
 	<iostream>
 
@@ -26,7 +25,7 @@
 	<iostream>
 	<vector>
 
-1653824093 source:c:\users\pc\desktop\прога\lab03\svg.cpp
+1653832302 source:c:\users\pc\desktop\прога\lab03\svg.cpp
 	"svg.h"
 	<iostream>
 

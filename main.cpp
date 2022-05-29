@@ -4,6 +4,7 @@
 #include <iostream>
 #include<vector>
 #include <windows.h>
+#include <sstream>
 
 using namespace std;
 
@@ -34,11 +35,10 @@ make_histogram(const vector<double> &numbers,size_t &bin_count, size_t number_co
         return bins;
 }
 
-
-
-int main()
+string make_info_text()
 {
-    DWORD WINAPI GetVersion(void);
+    stringstream buffer;
+   DWORD WINAPI GetVersion(void);
     DWORD info= GetVersion();
     DWORD mask = 0x0000ffff;
     DWORD platform = info >> 16;
@@ -50,8 +50,20 @@ int main()
     {
     build = platform;
     }
-    printf("Windows v%lu.%lu (build %lu)\n",version_major,version_minor,build);
-    return 0;
+    else
+    printf("minor_bit = %u",1);
+    char computer_name [MAX_COMPUTERNAME_LENGTH + 1];
+    DWORD Size = sizeof(computer_name);
+    GetComputerNameA(computer_name, &Size);
+
+    buffer << "Windows v" << version_major << "." << version_minor << " (build " << build << ")" << " " << "Computer name: " << computer_name;
+    return buffer.str();
+}
+
+
+int main()
+{
+
 //Ввод данных
 
     size_t number_count;
@@ -79,7 +91,7 @@ int main()
 //Вывод данных
 
         size_t bin_height;
-        show_histogram_svg(bins,bin_height);
+        show_histogram_svg(bins,bin_height,make_info_text());
 
 
 

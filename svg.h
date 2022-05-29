@@ -18,7 +18,7 @@ svg_text(double left, double baseline, string text);
 void svg_rect(double x, double y, double width, double height,string stroke="darkmagenta", string fill="lightcyan");
 
 void
-show_histogram_svg(const vector<size_t>& bins, size_t& bin_height);
+show_histogram_svg(const vector<size_t>& bins, size_t& bin_height,string buffer);
 
 
 #endif // SVG_H_INCLUDED
