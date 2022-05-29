@@ -126,7 +126,7 @@ int main(int argc, char* argv[])
         }
     }
     if (c==0)
-        show_histogram_svg(bins,"darkmagenta",make_info_text);
+        show_histogram_svg(bins,"darkmagenta",make_info_text());
 
 
     return 0;
