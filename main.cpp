@@ -42,9 +42,9 @@ write_data(void* items, size_t item_size, size_t item_count, void* ctx) {
     size_t data_size;
     data_size=item_count*item_size;
     stringstream* buffer = reinterpret_cast<stringstream*>(ctx);
-    const char* items2 = reinterpret_cast<const char*>(items);
-    buffer->write(items2, data_size);
-    return 0;
+    buffer->write(reinterpret_cast<const char*>(items), data_size);
+    return data_size;
+
 }
 
 Input
@@ -115,7 +115,6 @@ int main(int argc, char* argv[])
     const auto bins = make_histogram(input);
     int c;
     c=0;
-
 
     for ( int i=0;i<argc;i++)
     {
