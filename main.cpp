@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 #include <windows.h>
+#include <cstring>
 
 using namespace std;
 
@@ -58,6 +59,7 @@ download(const string& address) {
             curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
             curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer);
             res = curl_easy_perform(curl);
+            cout<<res;
             if(res )
                 {
                     cout <<  curl_easy_strerror(res);
@@ -100,33 +102,46 @@ int main(int argc, char* argv[])
     Input input;
 
 //Ввод данных
+int k=0;
+int c=0;
 
     if (argc>1)
     {
-        input=download(argv[1]);
+        for (int i=0;i<argc;i++)
+        {
+            if ((strstr(argv[i],"http")!=NULL)||(strstr(argv[i],"file")!=NULL))
+            {
+                input=download(argv[i]);
+                k=k+1;
+            }
+        }
+        if (k==0)
+            input=read_input(cin,true);
+        const auto bins = make_histogram(input);
+        for(int i=0;i<argc;i++)
+        {
+            if(strcmp(argv[i],"-stroke")==0)
+            {
+                if(argv[i+1]!=NULL)
+                    show_histogram_svg(bins,argv[i+1],make_info_text());
+                else
+                {
+                    cout<<"The Stroke option isn't working correctly. Enter the color name or code after -stroke";
+                    return 0;
+                }
+                c=c+1;
+            }
+        }
+        if (c==0)
+            show_histogram_svg(bins,"darkmagenta",make_info_text());
+
     }
     else
     {
         input=read_input(cin,true);
-    }
-
-    //Расчет гистограммы
-
-    const auto bins = make_histogram(input);
-    int c;
-    c=0;
-
-    for ( int i=0;i<argc;i++)
-    {
-        if (argv[i]=="-stroke")
-        {
-                show_histogram_svg(bins,argv[i+1],make_info_text());
-                c++;
-        }
-    }
-    if (c==0)
+        const auto bins = make_histogram(input);
         show_histogram_svg(bins,"darkmagenta",make_info_text());
-
+    }
 
     return 0;
 }
